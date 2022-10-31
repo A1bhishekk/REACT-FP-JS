@@ -1,11 +1,12 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
 }
-.App{
-  text-align: center;
+
+.App {
+  /* text-align: center; */
   background-color: #000000;
   min-height: 100vh;
   display: flex;
@@ -14,4 +15,20 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(227, 27, 81);
+}
+
+.container {
+
+  background-color: #85FFBD;
+  background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  padding: 2rem;
+  border-radius: 1rem;
+  min-height: 100vh;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  align-items: center;
+
+ 
 }
