@@ -10,6 +10,7 @@ function App() {
   const [screenh, setscreenh] = useState(null);
   const [screenw, setscreenw] = useState(null);
   const [os, setos] = useState(null);
+  const [cpu, setcpu] = useState(null);
 
   useEffect(() => {
     (async () => {
@@ -22,16 +23,24 @@ function App() {
       setscreenh(fingerprint.components.screenResolution.value[0]);
       setscreenw(fingerprint.components.screenResolution.value[1]);
       setos(fingerprint.components.platform.value);
+      setcpu(fingerprint.components);
       console.log(fingerprint);
     })();
   }, []);
 
+ 
+
   return (
     <div className="App">
       <div className='container'>
-        <h1>💕 Technical Abhi 💕</h1>
+      <pre>
+      {
+        JSON.stringify(cpu,[])
+      }
+      </pre>
+        <h2>💕 Technical Abhi 💕</h2>
         {visitorId ? (
-          <>
+          <div>
             <p>Your device 💻:{os}</p>
             <p>Visitor ID 📇:{visitorId}</p>
             <p>Browser 🐇:{browser}</p>
@@ -39,7 +48,7 @@ function App() {
             <p>Screen Width:{screenw}</p>
             <p>Screen Height:{screenh}</p>
             <p>RAM: {ram}GB</p>
-          </>
+          </div>
         ) : (
           <p>Technical Abhi detecting your browser's fingerprint.</p>
         )
